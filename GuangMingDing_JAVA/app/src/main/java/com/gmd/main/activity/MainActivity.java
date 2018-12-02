@@ -2,12 +2,16 @@ package com.gmd.main.activity;
 
 import android.os.Bundle;
 
+import com.blankj.utilcode.util.ConvertUtils;
+import com.blankj.utilcode.util.PermissionUtils;
 import com.gmd.R;
 import com.gmd.common.base.BaseActivity;
 import com.gmd.main.adapter.TabViewPagerAdapter;
 import com.gmd.main.presenter.MainPresenter;
 import com.gmd.main.view.IMainView;
 import com.gmd.main.widget.NoTouchViewPager;
+
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
