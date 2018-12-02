@@ -41,10 +41,10 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainVi
     @Override
     public void initNavigation() {
         NavigationController mNavigationController = pnvTab.material()
-                .addItem(R.drawable.ic_ondemand_video_black_24dp, "Movies & TV", COLORS[0])
-                .addItem(R.drawable.ic_audiotrack_black_24dp, "Music", COLORS[1])
-                .addItem(R.drawable.ic_book_black_24dp, "Books", COLORS[2])
-                .addItem(R.drawable.ic_news_black_24dp, "Newsstand", COLORS[3])
+                .addItem(R.drawable.ic_ondemand_video_black_24dp, "首页", COLORS[0])
+                .addItem(R.drawable.ic_audiotrack_black_24dp, "活动", COLORS[1])
+                .addItem(R.drawable.ic_book_black_24dp, "友圈", COLORS[2])
+                .addItem(R.drawable.ic_news_black_24dp, "个人", COLORS[3])
                 .enableAnimateLayoutChanges()
                 .build();
 

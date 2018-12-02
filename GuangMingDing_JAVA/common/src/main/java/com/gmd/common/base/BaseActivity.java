@@ -3,6 +3,7 @@ package com.gmd.common.base;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import com.blankj.utilcode.util.ToastUtils;
 import com.gmd.common.mvp.IBaseView;
 import com.gmd.common.mvp.IPresenter;
 
@@ -48,6 +49,6 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
 
     @Override
     public void showToast(String message) {
-
+        ToastUtils.showLong(message);
     }
 }
