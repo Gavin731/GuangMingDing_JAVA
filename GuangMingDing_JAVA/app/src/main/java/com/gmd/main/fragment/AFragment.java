@@ -11,6 +11,10 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.gmd.common.base.BaseFragment;
+import com.gmd.common.mvp.IBaseView;
+import com.gmd.common.mvp.IPresenter;
+import com.gmd.main.presenter.APresenter;
+import com.gmd.main.view.IAView;
 
 /**
  * @author: zenglinggui
@@ -21,7 +25,7 @@ import com.gmd.common.base.BaseFragment;
  * -----------------------------------------------------------------
  * 2018/11/30     zenglinggui       v1.0.0        create
  **/
-public class AFragment extends BaseFragment {
+public class AFragment extends BaseFragment<APresenter> implements IAView {
 
     private static final String ARG_C = "content";
 
@@ -33,9 +37,19 @@ public class AFragment extends BaseFragment {
         return fragment;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        presenter.initView();
+    }
+
+    @Override
+    public APresenter createPresenter() {
+        return new APresenter();
+    }
+
+    @Override
+    public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         String content = getArguments().getString(ARG_C);
         TextView textView = new TextView(getContext());
         textView.setTextSize(30);
