@@ -14,7 +14,6 @@ import com.gmd.main.widget.NoTouchViewPager;
 import java.util.List;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
 import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 
@@ -31,14 +30,17 @@ public class MainActivity extends BaseActivity<MainPresenter> implements IMainVi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
         presenter.initView();
     }
 
     @Override
     public MainPresenter createPresenter() {
         return new MainPresenter();
+    }
+
+    @Override
+    public int getLayoutId() {
+        return R.layout.activity_main;
     }
 
 

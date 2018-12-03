@@ -7,6 +7,11 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.gmd.common.mvp.IBaseView;
 import com.gmd.common.mvp.IPresenter;
 
+import javax.inject.Inject;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+
 /**
  * @author: zenglinggui
  * @description TODO
@@ -18,13 +23,22 @@ import com.gmd.common.mvp.IPresenter;
  **/
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IBaseView {
 
+    //    @Inject
     protected P presenter;
+
+    private Unbinder mUnbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         presenter = createPresenter();
         presenter.setView(this);
+
+        int layoutResID = getLayoutId();
+        if (layoutResID != 0) {
+            setContentView(layoutResID);
+            mUnbinder = ButterKnife.bind(this);
+        }
     }
 
     @Override
@@ -42,10 +56,20 @@ public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivi
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        presenter.destroy();
+        if (mUnbinder != null && mUnbinder != Unbinder.EMPTY) {
+            mUnbinder.unbind();
+            this.mUnbinder = null;
+        }
+        if (presenter != null) {
+            presenter.destroy();//释放资源
+            this.presenter = null;
+        }
+
     }
 
     public abstract P createPresenter();
+
+    public abstract int getLayoutId();
 
     @Override
     public void showToast(String message) {

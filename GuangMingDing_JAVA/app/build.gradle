@@ -28,4 +28,5 @@ dependencies {
     implementation project(':common')
 
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
 }
