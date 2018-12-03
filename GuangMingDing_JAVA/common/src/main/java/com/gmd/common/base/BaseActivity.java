@@ -7,8 +7,6 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.gmd.common.mvp.IBaseView;
 import com.gmd.common.mvp.IPresenter;
 
-import javax.inject.Inject;
-
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
@@ -23,7 +21,6 @@ import butterknife.Unbinder;
  **/
 public abstract class BaseActivity<P extends IPresenter> extends AppCompatActivity implements IBaseView {
 
-    //    @Inject
     protected P presenter;
 
     private Unbinder mUnbinder;
