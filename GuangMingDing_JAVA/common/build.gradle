@@ -15,27 +15,10 @@ android {
 
     }
 
-    signingConfigs {
-        release {
-            storeFile file("/Users/Shared/key/shangyantong.keystore")
-            storePassword "qcwl2syt"
-            keyAlias "syt"
-            keyPassword "qcwl2syt"
-        }
-        debug {
-        }
-    }
-
     buildTypes {
-        debug {
-            debuggable true
-            signingConfig signingConfigs.debug
-        }
-
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
-            signingConfig signingConfigs.release
         }
 
     }
