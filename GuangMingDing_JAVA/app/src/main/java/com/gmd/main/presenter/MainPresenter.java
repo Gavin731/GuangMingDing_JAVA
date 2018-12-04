@@ -1,6 +1,6 @@
 package com.gmd.main.presenter;
 
-import com.gmd.common.mvp.BasePresenter;
+import com.gmd.common.mvp.MvpPresenter;
 import com.gmd.main.view.IMainView;
 
 /**
@@ -12,7 +12,7 @@ import com.gmd.main.view.IMainView;
  * -----------------------------------------------------------------
  * 2018/11/30     zenglinggui       v1.0.0        create
  **/
-public class MainPresenter extends BasePresenter<IMainView> {
+public class MainPresenter extends MvpPresenter<IMainView> {
 
     @Override
     public void initView() {

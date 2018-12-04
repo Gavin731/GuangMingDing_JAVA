@@ -3,7 +3,7 @@ package com.gmd.main.activity;
 import android.os.Bundle;
 
 import com.gmd.R;
-import com.gmd.common.base.BaseActivity;
+import com.gmd.common.mvp.MvpActivity;
 import com.gmd.main.adapter.TabViewPagerAdapter;
 import com.gmd.main.presenter.MainPresenter;
 import com.gmd.main.view.IMainView;
@@ -13,7 +13,7 @@ import butterknife.BindView;
 import me.majiajie.pagerbottomtabstrip.NavigationController;
 import me.majiajie.pagerbottomtabstrip.PageNavigationView;
 
-public class MainActivity extends BaseActivity<MainPresenter> implements IMainView {
+public class MainActivity extends MvpActivity<MainPresenter> implements IMainView {
 
     private final int[] COLORS = {0xFF455A64, 0xFF00796B, 0xFF795548, 0xFF5B4947, 0xFFF57C00};
 

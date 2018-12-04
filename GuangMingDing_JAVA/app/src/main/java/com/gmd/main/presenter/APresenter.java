@@ -1,6 +1,6 @@
 package com.gmd.main.presenter;
 
-import com.gmd.common.mvp.BasePresenter;
+import com.gmd.common.mvp.MvpPresenter;
 import com.gmd.main.view.IAView;
 
 /**
@@ -12,7 +12,7 @@ import com.gmd.main.view.IAView;
  * -----------------------------------------------------------------
  * 2018/12/3     zenglinggui       v1.0.0        create
  **/
-public class APresenter extends BasePresenter<IAView> {
+public class APresenter extends MvpPresenter<IAView> {
 
     @Override
     public void initView() {

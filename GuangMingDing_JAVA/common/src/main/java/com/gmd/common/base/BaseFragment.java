@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.gmd.common.mvp.IBaseView;
-import com.gmd.common.mvp.IPresenter;
+
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * @author: zenglinggui
@@ -19,47 +21,30 @@ import com.gmd.common.mvp.IPresenter;
  * <p>
  * Date         Author      Version     Description
  * -----------------------------------------------------------------
- * 2018/11/30     zenglinggui       v1.0.0        create
+ * 2018/12/4     zenglinggui       v1.0.0        create
  **/
-public abstract class BaseFragment<P extends IPresenter> extends Fragment implements IBaseView {
+public abstract class BaseFragment extends Fragment implements IBaseView {
 
-    protected P presenter;
-
-    @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        presenter = createPresenter();
-        presenter.setView(this);
-    }
+    private Unbinder unbinder;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return initView(inflater, container, savedInstanceState);
+        View view = initView(inflater, container, savedInstanceState);
+        if (view != null) {
+            unbinder = ButterKnife.bind(this, view);
+        }
+        return view;
     }
-
-    public abstract P createPresenter();
 
     public abstract View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState);
 
     @Override
-    public void onResume() {
-        super.onResume();
-        presenter.resume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        presenter.pause();
-    }
-
-    @Override
     public void onDestroy() {
         super.onDestroy();
-        if (presenter != null) {
-            presenter.destroy();//释放资源
-            this.presenter = null;
+        if (unbinder != null) {
+            unbinder.unbind();
+            unbinder = null;
         }
     }
 

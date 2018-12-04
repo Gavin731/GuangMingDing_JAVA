@@ -13,7 +13,7 @@ import java.lang.ref.WeakReference;
  * -----------------------------------------------------------------
  * 2018/11/30     zenglinggui       v1.0.0        create
  **/
-public abstract class BasePresenter<V> implements IPresenter<V> {
+public abstract class MvpPresenter<V> implements IPresenter<V> {
 
     protected WeakReference<V> view = null;
 
