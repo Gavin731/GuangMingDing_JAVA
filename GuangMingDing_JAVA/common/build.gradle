@@ -15,11 +15,29 @@ android {
 
     }
 
-    buildTypes {
+    signingConfigs {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            storeFile file("/Users/Shared/key/shangyantong.keystore")
+            storePassword "qcwl2syt"
+            keyAlias "syt"
+            keyPassword "qcwl2syt"
         }
+        debug {
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            signingConfig signingConfigs.release
+        }
+
     }
 
 }
@@ -50,5 +68,7 @@ dependencies {
     api 'com.zhouyou:rxeasyhttp:2.1.2'
     //各种工具包
     api 'com.blankj:utilcode:1.22.0'
+    //通用adapter
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
 
 }
