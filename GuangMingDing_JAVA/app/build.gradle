@@ -13,7 +13,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file("/Users/Shared/key/shangyantong.keystore")
+            storeFile file("/Users/zenglinggui/Documents/zeng/key_store/shangyantong.keystore")
             storePassword "qcwl2syt"
             keyAlias "syt"
             keyPassword "qcwl2syt"
@@ -26,12 +26,16 @@ android {
         debug {
             debuggable true
             signingConfig signingConfigs.debug
+            buildConfigField("boolean", "LOG_DEBUG", "true")
         }
 
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            minifyEnabled true //开启混淆
+            shrinkResources true //移除无用资源
+            zipAlignEnabled true //zipalign优化
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+            buildConfigField("boolean", "LOG_DEBUG", "false")//正式版不打印日志
         }
     }
 }

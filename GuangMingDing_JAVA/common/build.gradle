@@ -17,8 +17,8 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+            minifyEnabled false //开启混淆
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
     }
@@ -52,6 +52,6 @@ dependencies {
     //各种工具包
     api 'com.blankj:utilcode:1.22.0'
     //通用adapter
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
 
 }

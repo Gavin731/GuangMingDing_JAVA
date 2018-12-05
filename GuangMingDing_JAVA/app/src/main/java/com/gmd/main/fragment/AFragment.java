@@ -58,5 +58,5 @@ public class AFragment extends MvpFragment<APresenter> implements IAView {
     public void skipCardView() {
         ActivityUtils.startActivity(CardViewActivity.class);
     }
-    
+
 }
