@@ -4,8 +4,6 @@ import android.os.Bundle;
 
 import com.gmd.common.base.BaseActivity;
 
-import butterknife.Unbinder;
-
 /**
  * @author: zenglinggui
  * @description TODO

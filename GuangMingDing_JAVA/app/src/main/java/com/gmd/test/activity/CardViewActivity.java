@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.github.chrisbanes.photoview.PhotoView;
 import com.gmd.R;
 import com.gmd.common.base.BaseActivity;
