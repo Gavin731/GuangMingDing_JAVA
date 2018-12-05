@@ -53,5 +53,9 @@ dependencies {
     api 'com.blankj:utilcode:1.22.0'
     //通用adapter
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
-
+    //glide
+    api 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    //PhotoView
+    api 'com.github.chrisbanes:photoview:2.1.4'
 }

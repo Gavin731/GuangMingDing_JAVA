@@ -14,7 +14,7 @@
     <me.majiajie.pagerbottomtabstrip.PageNavigationView
         android:id="@+id/pnvTab"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/wh_56"
+        android:layout_height="@dimen/dp_56"
         android:background="@drawable/tab_background"
         android:elevation="8dp">
 

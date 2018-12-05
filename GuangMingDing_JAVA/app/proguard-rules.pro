@@ -184,3 +184,11 @@
 -keep class com.zhouyou.http.model.** {*;}
 -keep class com.zhouyou.http.cache.model.** {*;}
 -keep class com.zhouyou.http.cache.stategy.**{*;}
+
+# glide
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+  **[] $VALUES;
+  public *;
+}
