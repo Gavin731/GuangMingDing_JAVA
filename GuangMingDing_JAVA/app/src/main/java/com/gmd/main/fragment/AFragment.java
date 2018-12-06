@@ -13,6 +13,7 @@ import com.gmd.common.mvp.MvpFragment;
 import com.gmd.main.presenter.APresenter;
 import com.gmd.main.view.IAView;
 import com.gmd.test.activity.CardViewActivity;
+import com.gmd.test.activity.CoordinatorLayoutActivity;
 
 import butterknife.OnClick;
 
@@ -57,6 +58,11 @@ public class AFragment extends MvpFragment<APresenter> implements IAView {
     @OnClick(R.id.btn_card_view)
     public void skipCardView() {
         ActivityUtils.startActivity(CardViewActivity.class);
+    }
+
+    @OnClick(R.id.btn_coordinator_layout)
+    public void skipCoordinatorLayout() {
+        ActivityUtils.startActivity(CoordinatorLayoutActivity.class);
     }
 
 }

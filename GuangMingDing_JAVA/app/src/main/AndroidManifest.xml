@@ -26,7 +26,10 @@
         </activity>
 
 
-        <activity android:name=".test.activity.CardViewActivity"/>
+        <activity android:name=".test.activity.CardViewActivity" />
+        <activity
+            android:name=".test.activity.CoordinatorLayoutActivity"
+            android:theme="@style/Theme.GMDNoTitle" />
     </application>
 
 </manifest>
