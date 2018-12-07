@@ -1,11 +1,7 @@
 package com.gmd.main.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.blankj.utilcode.util.ActivityUtils;
 import com.gmd.R;
@@ -50,9 +46,18 @@ public class AFragment extends MvpFragment<APresenter> implements IAView {
     }
 
     @Override
-    public View initView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.view_home, container, false);
-        return view;
+    public int getLayoutId() {
+        return R.layout.view_home;
+    }
+
+    @Override
+    public void lazyLoad() {
+
+    }
+
+    @Override
+    public void initView() {
+
     }
 
     @OnClick(R.id.btn_card_view)
