@@ -48,7 +48,13 @@ dependencies {
     //刷新控件
     api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
     //网络请求
-    api 'com.zhouyou:rxeasyhttp:2.1.2'
+//    api 'com.zhouyou:rxeasyhttp:2.1.2'
+
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'com.squareup.retrofit2:retrofit:2.5.0'
+    api 'com.squareup.retrofit2:converter-gson:2.5.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+
     //各种工具包
     api 'com.blankj:utilcode:1.22.0'
     //通用adapter

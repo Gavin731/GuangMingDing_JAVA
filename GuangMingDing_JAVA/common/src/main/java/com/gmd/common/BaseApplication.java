@@ -16,6 +16,8 @@ import com.squareup.leakcanary.LeakCanary;
  **/
 public class BaseApplication extends Application {
 
+    private static BaseApplication instance;
+
     @Override
     public void onCreate() {
         super.onCreate();
@@ -26,5 +28,17 @@ public class BaseApplication extends Application {
         }
         LeakCanary.install(this);
         MultiDex.install(this);
+    }
+
+    public static BaseApplication getInstance() {
+        if (instance == null) {
+            throw new IllegalStateException("Application has not been created");
+        }
+
+        return instance;
+    }
+
+    public BaseApplication() {
+        instance = this;
     }
 }
