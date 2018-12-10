@@ -24,12 +24,6 @@ public class MainActivity extends MvpActivity<MainPresenter> implements IMainVie
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        presenter.initView();
-    }
-
-    @Override
     public MainPresenter createPresenter() {
         return new MainPresenter();
     }
@@ -39,6 +33,11 @@ public class MainActivity extends MvpActivity<MainPresenter> implements IMainVie
         return R.layout.activity_main;
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        presenter.initView();
+    }
 
     @Override
     public void initNavigation() {

@@ -1,4 +1,4 @@
-package com.gmd.common.http;
+package com.gmd.common.http.interceptor;
 
 import java.io.IOException;
 import java.util.HashMap;

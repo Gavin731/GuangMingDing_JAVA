@@ -43,6 +43,7 @@ public abstract class BaseActivity extends AppCompatActivity implements IBaseVie
 
     public abstract int getLayoutId();
 
+
     @Override
     public void showToast(String message) {
         ToastUtils.showLong(message);
