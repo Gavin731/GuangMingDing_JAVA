@@ -33,31 +33,20 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 
-    //底部tab导航
-    api 'me.majiajie:pager-bottom-tab-strip:2.3.0'
+
     //内存泄露
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.6.2'
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.6.2'
     debugImplementation 'com.squareup.leakcanary:leakcanary-support-fragment:1.6.2'
     //控件绑定
     api 'com.jakewharton:butterknife:8.8.1'
-    //RxBindind
-    api 'com.jakewharton.rxbinding2:rxbinding:2.0.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     //多dex
     implementation 'com.android.support:multidex:1.0.3'
-    //刷新控件
-    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-14'
-    //网络请求
-    api 'com.zhouyou:rxeasyhttp:2.1.2'
     //各种工具包
     api 'com.blankj:utilcode:1.22.0'
-    //通用adapter
-    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.44'
     //glide
     api 'com.github.bumptech.glide:glide:4.8.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
-    //PhotoView
-    api 'com.github.chrisbanes:photoview:2.1.4'
-    //EventBus
-    api 'org.greenrobot:eventbus:3.1.1'
+
 }

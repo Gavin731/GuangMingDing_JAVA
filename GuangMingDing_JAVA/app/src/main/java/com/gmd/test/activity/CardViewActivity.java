@@ -34,6 +34,6 @@ public class CardViewActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Glide.with(this).load("http://img2.imgtn.bdimg.com/it/u=3699579472,3995360432&fm=26&gp=0.jpg").into(photoView);
+        Glide.with(this).load("http://a3.topitme.com/2/19/82/1127998324d2682192o.jpg").into(photoView);
     }
 }
