@@ -30,6 +30,7 @@
         <activity
             android:name=".test.activity.CoordinatorLayoutActivity"
             android:theme="@style/Theme.GMDNoTitle" />
+        <activity android:name=".test.activity.RefreshLayoutActivity" />
     </application>
 
 </manifest>

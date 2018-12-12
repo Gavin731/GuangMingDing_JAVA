@@ -10,6 +10,7 @@ import com.gmd.main.presenter.APresenter;
 import com.gmd.main.view.IAView;
 import com.gmd.test.activity.CardViewActivity;
 import com.gmd.test.activity.CoordinatorLayoutActivity;
+import com.gmd.test.activity.RefreshLayoutActivity;
 
 import butterknife.OnClick;
 
@@ -70,4 +71,8 @@ public class AFragment extends MvpFragment<APresenter> implements IAView {
         ActivityUtils.startActivity(CoordinatorLayoutActivity.class);
     }
 
+    @OnClick(R.id.btn_refresh_layout)
+    public void skipRefreshLayout() {
+        ActivityUtils.startActivity(RefreshLayoutActivity.class);
+    }
 }
