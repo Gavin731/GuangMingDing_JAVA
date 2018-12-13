@@ -3,7 +3,6 @@ package com.gmd.test.adapter;
 import android.support.annotation.Nullable;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
-import com.gmd.R;
 import com.gmd.test.viewholder.CommonStyleHolder;
 
 import java.util.List;
