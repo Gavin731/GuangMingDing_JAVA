@@ -3,6 +3,7 @@ package com.gmd.common.mvp;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.gmd.common.base.BaseFragment;
 
 /**
@@ -23,29 +24,15 @@ public abstract class MvpFragment<P extends IPresenter> extends BaseFragment imp
         super.onCreate(savedInstanceState);
         presenter = createPresenter();
         presenter.setView(this);
+        getLifecycle().addObserver(presenter);
     }
 
     public abstract P createPresenter();
 
     @Override
-    public void onResume() {
-        super.onResume();
-        presenter.resume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        presenter.pause();
-    }
-
-    @Override
     public void onDestroy() {
         super.onDestroy();
-        if (presenter != null) {
-            presenter.destroy();//释放资源
-            this.presenter = null;
-        }
+        getLifecycle().removeObserver(presenter);
     }
 
 }

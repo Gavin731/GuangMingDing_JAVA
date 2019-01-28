@@ -2,6 +2,7 @@ package com.gmd.common.mvp;
 
 import android.os.Bundle;
 
+import com.blankj.utilcode.util.LogUtils;
 import com.gmd.common.base.BaseActivity;
 
 /**
@@ -22,27 +23,13 @@ public abstract class MvpActivity<P extends IPresenter> extends BaseActivity imp
         super.onCreate(savedInstanceState);
         presenter = createPresenter();
         presenter.setView(this);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        presenter.resume();
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        presenter.pause();
+        getLifecycle().addObserver(presenter);
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if (presenter != null) {
-            presenter.destroy();//释放资源
-            this.presenter = null;
-        }
+        getLifecycle().removeObserver(presenter);
 
     }
 

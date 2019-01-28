@@ -1,6 +1,9 @@
 package com.gmd.common.mvp;
 
+import android.arch.lifecycle.LifecycleOwner;
 import android.support.annotation.Nullable;
+
+import com.blankj.utilcode.util.LogUtils;
 
 import java.lang.ref.WeakReference;
 
@@ -35,17 +38,33 @@ public abstract class MvpPresenter<V> implements IPresenter<V> {
 
 
     @Override
-    public void resume() {
-
+    public void onCreate(LifecycleOwner owner) {
+        LogUtils.e("------------------presenter:onCreate");
     }
 
     @Override
-    public void pause() {
-
+    public void onStart(LifecycleOwner owner) {
+        LogUtils.e("------------------presenter:onStart");
     }
 
     @Override
-    public void destroy() {
+    public void onResume(LifecycleOwner owner) {
+        LogUtils.e("------------------presenter:onResume");
+    }
+
+    @Override
+    public void onPause(LifecycleOwner owner) {
+        LogUtils.e("------------------presenter:onPause");
+    }
+
+    @Override
+    public void onStop(LifecycleOwner owner) {
+        LogUtils.e("------------------presenter:onStop");
+    }
+
+    @Override
+    public void onDestroy(LifecycleOwner owner) {
+        LogUtils.e("------------------presenter:onDestroy");
         if (this.view != null) {
             this.view.clear();
             this.view = null;
